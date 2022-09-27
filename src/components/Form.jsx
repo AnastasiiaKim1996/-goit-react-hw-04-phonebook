@@ -35,6 +35,17 @@ export class Form extends Component {
         });
   };
 
+  removeContact = id => {
+    this.setState(prevState => {
+      const newContacts = prevState.contacts.filter(
+        contact => contact.id !== id
+      );
+      return {
+        contacts: newContacts,
+      };
+    });
+  };
+
   handleChange = e => {
     const { name, value } = e.target;
     this.setState({
@@ -68,7 +79,7 @@ export class Form extends Component {
         <ContactForm onSubmit={this.addContact} />
         <Title>Contacts</Title>
         <Filter value={filter} onChange={this.handleChange} />
-        <ContactList items={contacts} />
+        <ContactList items={contacts} removeContact={this.removeContact} />
       </Container>
     );
   }

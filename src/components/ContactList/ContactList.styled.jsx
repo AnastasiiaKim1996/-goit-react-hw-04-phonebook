@@ -27,7 +27,7 @@ export const Item = styled.li`
 
   &:hover,
   &:focus {
-    background-color: rgb(33 150 243 / 10%);
+    background-color:rgb(138, 194, 237) ;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   `;
 export const NameContact = styled.p`

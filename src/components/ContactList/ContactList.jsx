@@ -6,13 +6,15 @@ import {
   Button,
 } from './ContactList.styled';
 
-export const ContactList = ({ items }) => {
+export const ContactList = ({ items, removeContact }) => {
   const elements = items.map(({ number, name, id }) => {
     return (
       <Item key={id}>
         <NameContact>{name}:</NameContact>
         <NumberContact>{number}</NumberContact>
-        <Button>Delete</Button>
+        <Button type="button" onClick={() => removeContact(id)}>
+          Delete
+        </Button>
       </Item>
     );
   });
