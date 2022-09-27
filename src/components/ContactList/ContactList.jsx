@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import {
   List,
   Item,
@@ -23,4 +25,17 @@ export const ContactList = ({ items, removeContact }) => {
       <List>{elements}</List>
     </div>
   );
+};
+
+ContactList.propTypes = {
+  removeContact: PropTypes.func.isRequired,
+  items: PropTypes.arrayOf(
+    PropTypes.shape(
+      {
+        id: PropTypes.string,
+        name: PropTypes.string,
+        number: PropTypes.string,
+      }.isRequired
+    )
+  ),
 };
